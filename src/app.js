@@ -1,4 +1,5 @@
 import 'bootstrap'
+import 'prismjs'
 
 export class App {
   configureRouter(config, router) {

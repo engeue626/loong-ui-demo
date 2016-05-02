@@ -4,7 +4,6 @@ export class TableRowValueConverter {
 	    	var newRow = new Object();
 	    	newRow.isChecked = row.isChecked;
 	    	newRow.value = Object.keys(row.value).map(function(key){return row.value[key]});
-	    	console.log(newRow.value);
 	    	return newRow;
 	    });
 	}

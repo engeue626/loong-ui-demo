@@ -9,6 +9,7 @@ var compilerOptions = require('../babel-options');
 var assign = Object.assign || require('object.assign');
 var notify = require('gulp-notify');
 var browserSync = require('browser-sync');
+var codeSampleHandler = require('../lib/code-samples');
 
 // transpiles changed es6 files to SystemJS format
 // the plumber() call prevents 'pipe breaking' caused
@@ -27,7 +28,8 @@ gulp.task('build-system', function() {
 // copies changed html files to the output directory
 gulp.task('build-html', function() {
   return gulp.src(paths.html)
-    .pipe(changed(paths.output, {extension: '.html'}))
+    .pipe(codeSampleHandler())  
+    // .pipe(changed(paths.output, {extension: '.html'}))
     .pipe(gulp.dest(paths.output));
 });
 

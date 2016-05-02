@@ -1,5 +1,7 @@
 .long-table
-  margin: 0px 15px 0px 15px
+  overflow: auto
+  height: calc(100vh - 150px);
+  margin: 15px 30px 0px 30px
   tr .actions
     opacity: 0
   tr:hover .actions
@@ -7,18 +9,18 @@
     transition: 0.1s opacity linear;
   td
     background-color: white
+  table
+    margin-bottom: 0px
 
 .long-table-head
   background-color: #c9e6e6;
   font-weight: 500;
   color: #575757;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  border-top: 1px solid white;
-  border-left: 1px solid white;
-  border-right: 1px solid white;
-  border-bottom: 1px solid #d6eded;
+
 .long-table-body
   font-size: 12px;
+
+.long-table-wrapper
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   border-top: 1px solid white;
   border-left: 1px solid white;
