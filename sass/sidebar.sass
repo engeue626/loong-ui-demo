@@ -1,0 +1,115 @@
+=text-white($opacity)
+  text-decoration: none;
+  color: white;
+  opacity: $opacity;
+
+.long-sidebar
+  height: 100vh
+  background-color: $blue-darkest
+  box-shadow: 0 2px 4px rgba(40, 50, 64, 0.7)
+  z-index: 10
+  width: 46px
+
+.long-sidebar-expanded
+  @extend .long-sidebar
+  width: 200px
+  overflow: hidden
+  overflow-y: auto
+
+
+.long-sidebar-logo
+  width: 100%
+  background: $blue-darkest
+  display: flex
+  align-items: center
+  margin-bottom: 20px
+
+.long-sidebar-logo-text
+  color: white
+  display:inline-block
+
+.long-sidebar-nav
+  padding-left: 0
+  margin-bottom: 0
+
+.long-sidebar-row 
+  position: relative
+
+.long-sidebar-item
+  height: 40px
+  flex-direction: row
+  flex-wrap: nowrap
+  align-items: center
+  justify-content: flex-start
+  cursor: pointer
+  display: flex
+  +text-white(.4)
+  @extend .long-sidebar-hover 
+  @extend .long-sidebar-item-hover
+
+.long-sidebar-item-icon
+  font-size: 17px
+  width: 46px
+  display: flex
+  justify-content: center
+.long-sidebar-item-name
+  display: inline-block
+
+.long-sidebar-subitems
+  .long-sidebar-subitem-icon
+    display: none
+
+
+.long-sidebar-subitem
+  height: 40px
+  flex-direction: row
+  flex-wrap: nowrap
+  align-items: center
+  justify-content: flex-start
+  cursor: pointer
+  display: flex
+  padding-left: 46px
+  +text-white(.4)
+  @extend .long-sidebar-hover
+
+.long-sidebar-submenu:before
+  content: "\f105"
+  position: absolute;
+  font-family: FontAwesome;
+  top: 0;
+  right: 10px;
+  font-size: 1.5rem;
+  line-height: 40px;
+  +text-white(.6)
+
+.long-sidebar-submenu-collapsed:before
+  content: "\f107"
+  position: absolute;
+  font-family: FontAwesome;
+  top: 0;
+  right: 10px;
+  font-size: 1.5rem;
+  line-height: 40px;
+  +text-white(.6)
+
+.long-sidebar-hover
+  &:hover, &:focus
+    +text-white(1)
+
+.long-sidebar-item-hover
+  &:hover, &:focus
+    background-color: #3e4653;
+    box-shadow: inset -1px 0 #282d36;
+
+.long-sidebar-subitem-active
+  background: #5f656f;
+  text-decoration: none;
+  color: white;
+  opacity: 1;
+
+.long-sidebar-item-active
+  background-color: #3e4653;
+  box-shadow: inset -1px 0 #282d36
+  +text-white(1)
+
+

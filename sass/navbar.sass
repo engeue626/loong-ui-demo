@@ -1,0 +1,33 @@
+=text-gray($opacity)
+  text-decoration: none
+  color: #364151
+  opacity: $opacity
+  font-size: 17px
+
+.long-navbar
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #d8dada;
+  z-index: 10;
+  height: 4.16667rem
+  background-color: white
+
+.long-navbar-border-left
+  border-left: 1px solid #d8dada;
+
+.long-navbar-border-right
+  border-right: 1px solid #d8dada;
+
+.nav li a:hover, .nav li a:focus
+  background-color: transparent
+  .fa
+  	+text-gray(1)
+
+.long-navbar-nav
+  .fa
+    transition: opacity .3s ease-in-out
+    text-shadow: none
+    +text-gray(.4)
+  .dropdown a
+    color: inherit
+
+

@@ -1,0 +1,29 @@
+<template>
+	<require from="table-row-value-converter"></require>
+	<div class="row long-table">
+		<h3 class="font-bold">${name}</h3>
+		<table class="table table-hover">
+			<thead class="long-table-head">
+				<tr>
+					<th class="text-center">
+						 <input type="checkbox"></input>
+					</th>
+					<th repeat.for="head of heads">${head}</th>
+				</tr>
+			</thead>
+			<tbody class="long-table-body">
+				<tr repeat.for="row of rows | tableRow">
+					<td class="text-center">
+						<input type="checkbox" checked.bind="row.isChecked"></input>
+					</td>
+					<td repeat.for="item of row.value">${item}</td>
+					<td>
+						<button class="btn btn-danger btn-sm actions">
+							<i class="fa fa-file-text-o"></i>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</template>
