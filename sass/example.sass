@@ -1,8 +1,21 @@
 .long-example-content-overflow
   overflow: auto;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 150px);
   .long-table
     height: 100%;
     overflow: visible
   pre 
     margin: 15px 30px 15px 30px
+
+.long-example-content
+  margin: 15px 30px 0px 30px;
+  pre 
+    margin: 15px 0px 15px 0px
+
+.long-example-show-grid [class^=col-] 
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #eee;
+  background-color: rgba(86,61,124,.15);
+  border: 1px solid #ddd;
+  border: 1px solid rgba(86,61,124,.2);

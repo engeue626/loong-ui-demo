@@ -10,7 +10,7 @@
                         <div class="long-sidebar-item-name">${item.name}</div>
                     </a>
                     <div class="collapse long-sidebar-subitems" id="${item.name | htmlTagFormat}">
-                        <a class.bind="subItem.active ? 'long-sidebar-subitem-active long-sidebar-subitem' : 'long-sidebar-subitem'" href="${subItem.href}" data-toggle="tooltip" data-trigger="hover" title="${subItem.name}" repeat.for="subItem of item.subItems" click.delegate="activeItem(subItem)">
+                        <a class.bind="subItem.active ? 'long-sidebar-subitem-active long-sidebar-subitem' : 'long-sidebar-subitem'" href="${subItem.href}" data-toggle="tooltip" data-trigger="hover" title="${subItem.name}" repeat.for="subItem of item.subItems" mouseup.trigger="activeItem(subItem)">
                             <i class="long-sidebar-subitem-icon fa ${subItem.icon}"></i>
                             <div class="long-sidebar-item-name">
                                 ${subItem.name}
@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div if.bind="!item.subItems">
-                    <a class.bind="item.active ? 'long-sidebar-item-active long-sidebar-item' : 'long-sidebar-item'" href="#" title="${item.name}" click.delegate="activeItem(item)" data-trigger="hover">
+                    <a class.bind="item.active ? 'long-sidebar-item-active long-sidebar-item' : 'long-sidebar-item'" href="${item.href}" title="${item.name}" mouseup.trigger="activeItem(item)" data-trigger="hover">
                         <i class="long-sidebar-item-icon fa ${item.icon}"></i>
                         <div class="long-sidebar-item-name">
                             ${item.name}

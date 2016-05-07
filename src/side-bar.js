@@ -24,8 +24,8 @@ export let SideBar = decorators(bindable('router')).on(class {
 		},
 		{
 			"name": "Buttons", 
-			"icon": "fa-cloud-download", 
-			"href": "#/buttons"
+			"icon": "fa-taxi", 
+			"href": "#/button"
 		},
 		{
 			"name": "Datapicker", 
@@ -34,23 +34,23 @@ export let SideBar = decorators(bindable('router')).on(class {
 		},
 		{
 			"name": "Dropdown", 
-			"icon": "fa-cloud-download", 
-			"href": "#/buttons"
+			"icon": "fa-university", 
+			"href": "#/dropdown"
 		},
 		{
 			"name": "Form", 
-			"icon": "fa-cloud-download", 
-			"href": "#/buttons"
+			"icon": "fa-wpforms", 
+			"href": "#/form"
 		},
 		{
 			"name": "Grid", 
-			"icon": "fa-cloud-download", 
-			"href": "#/buttons"
+			"icon": "fa-rebel", 
+			"href": "#/grid"
 		},
 		{
 			"name": "Inputs", 
-			"icon": "fa-cloud-download", 
-			"href": "#/buttons"
+			"icon": "fa-github", 
+			"href": "#/input"
 		},
 		{
 			"name": "Notification", 

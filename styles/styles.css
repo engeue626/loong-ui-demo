@@ -49,6 +49,18 @@ section {
   margin: 0 20px;
 }
 
+html:-moz-full-screen {
+    background: red;
+}
+
+html:-webkit-full-screen {
+    background: red;
+}
+
+html:fullscreen {
+    background: red;
+}
+
 .navbar-nav li.loader {
   margin: 12px 24px 0 6px;
 }
