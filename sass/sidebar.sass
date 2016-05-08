@@ -8,14 +8,12 @@
   background-color: $blue-darkest
   box-shadow: 0 2px 4px rgba(40, 50, 64, 0.7)
   z-index: 10
-  width: 46px
-
-.long-sidebar-expanded
-  @extend .long-sidebar
+  // width: 46px
+  display: flex !important
+  flex-direction: column
+  align-self: stretch
+  // for expanded
   width: 200px
-  overflow: hidden
-  overflow-y: auto
-
 
 .long-sidebar-logo
   width: 100%
@@ -39,6 +37,8 @@
   height: 40px
   flex-direction: row
   flex-wrap: nowrap
+  flex: 0 1 70px
+  overflow: hidden
   align-items: center
   justify-content: flex-start
   cursor: pointer
@@ -50,20 +50,18 @@
 .long-sidebar-item-icon
   font-size: 17px
   width: 46px
-  display: flex
+  display: inherit
   justify-content: center
 .long-sidebar-item-name
-  display: inline-block
-
-.long-sidebar-subitems
-  .long-sidebar-subitem-icon
-    display: none
-
+  display: inherit
+  overflow: hidden
+  flex: 1 1
 
 .long-sidebar-subitem
   height: 40px
   flex-direction: row
   flex-wrap: nowrap
+  flex: 0 1 70px
   align-items: center
   justify-content: flex-start
   cursor: pointer
@@ -71,6 +69,13 @@
   padding-left: 46px
   +text-white(.4)
   @extend .long-sidebar-hover
+  @extend .long-sidebar-item-hover
+
+.long-sidebar-subitems-collapsed
+  display: none
+
+.long-sidebar-subitems
+  display: block 
 
 .long-sidebar-submenu:before
   content: "\f105"
@@ -101,6 +106,7 @@
     background-color: #3e4653;
     box-shadow: inset -1px 0 #282d36;
 
+
 .long-sidebar-subitem-active
   background: #5f656f;
   text-decoration: none;
@@ -112,4 +118,35 @@
   box-shadow: inset -1px 0 #282d36
   +text-white(1)
 
+// define sidebar collapsed
+.long-sidebar-collapsed
+  width: 46px
+  .long-sidebar-submenu:before
+    content: ""
 
+  .long-sidebar-submenu-collapsed:before
+    content: ""
+
+  .long-sidebar-row
+    &:hover
+      width: 150px
+      height: 40px
+      background-color: $blue-darkest
+      .long-sidebar-item-name
+        justify-content: center
+      .long-sidebar-subitems-collapsed
+        display: inline-block
+        width: 104px
+        position: relative
+        background-color: $blue-darkest
+        left: 46px
+        .long-sidebar-subitem
+          padding-left: 0
+
+.long-sidebar-button-collapse
+  position: fixed
+  bottom: 15px
+  left: 15px
+  a
+    cursor: pointer
+    +text-white(.4)

@@ -5,11 +5,14 @@ import {toHtmlTagFormat} from 'lib/html-tag-format'
 export let SideBar = decorators(bindable('router')).on(class {
 	static inject = [Element];
 
+	isSidebarCollapsed = false;
+
 	items  = [
 		{
 			"name": "Table", 
-			"icon": "fa-bars", 
+			"icon": "fa-server", 
 			"href": "#", 
+			"collapsed": true,
 			"subItems": [
 				{
 					"name": "Table 1",
@@ -95,15 +98,34 @@ export let SideBar = decorators(bindable('router')).on(class {
 		this.currentItem = item;
 	}
 
-	collapse(item) {
+	onCollapseItem(item) {
+		if (this.isSidebarCollapsed) {
+			return;
+		}	
+		item.collapsed = !item.collapsed;
+		this.collapseItem(item);
+	}
+
+	collapseItem(item) {
 		var id = toHtmlTagFormat(item.name);
 		var subItems = $(this.element).find("#" + id);
-		if ($(subItems).prev().hasClass("collapsed")) {
+		if (item.collapsed) {
 			$(subItems).prev().removeClass("long-sidebar-submenu-collapsed");
 			$(subItems).prev().addClass("long-sidebar-submenu");
 		} else {
 			$(subItems).prev().removeClass("long-sidebar-submenu");
 			$(subItems).prev().addClass("long-sidebar-submenu-collapsed");
 		}
+	}
+
+	onSidebarCollapse() {
+		// collapse all subitems
+		for (var i in this.items) {
+			if (this.items[i].collapsed != null && !this.items[i].collapsed) {
+				this.items[i].collapsed = true;
+				this.collapseItem(this.items[i]);
+			}
+		}
+		this.isSidebarCollapsed = !this.isSidebarCollapsed;
 	}
 });

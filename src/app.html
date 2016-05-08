@@ -5,16 +5,8 @@
     <require from="css/app.css"></require>
     
     <div id="long-main" class="long-row margin-l-0 margin-r-0">
-        <div class="long-sidebar-expanded">
-            <div>
-                <a class="long-sidebar-logo" href="/">
-                    <img src="images/long1.jpeg" width="40" height="40"></img>
-                    <span class="long-sidebar-logo-text">SITE NAME</span>
-                </a>
-            </div>
-            <side-bar router.bind="router"></side-bar>
- <!--            <nav-bar router.bind="router"></nav-bar> -->
-        </div>
+        <side-bar router.bind="router"></side-bar>
+
         <div class="long-content">
             <nav-bar router.bind="router"></nav-bar>
             <router-view></router-view>
